@@ -1,0 +1,8 @@
+(ruu_size,2):(sim_IPC,0.5173)
+(ruu_size,4):(sim_IPC,0.8494)
+(ruu_size,8):(sim_IPC,1.2066)
+(ruu_size,16):(sim_IPC,1.3065)
+(ruu_size,32):(sim_IPC,1.3089)
+(ruu_size,64):(sim_IPC,1.3090)
+(ruu_size,128):(sim_IPC,1.3090)
+(ruu_size,256):(sim_IPC,1.3090)
