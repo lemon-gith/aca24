@@ -5,7 +5,7 @@
 
 for ((cache_linesize = $1; cache_linesize <= $2; cache_linesize *= 2))
 do
-  echo -n "(D1_cache_linesize,$cache_linesize):"
+  echo -n "D1_cache_linesize,$cache_linesize:"
   export SSFLAGS="-cache:dl1 dl1:1024:$cache_linesize:1:l"
   ./run-wattch 2>&1 | ./scripts/tabulate
 done

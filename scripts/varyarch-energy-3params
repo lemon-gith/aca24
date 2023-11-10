@@ -6,7 +6,7 @@ do
   do
     for lsq_size in 8  16 32
     do
-      echo -n "(bpred,$bpredictor),(ruu_size,$ruu_size),(lsq_size,$lsq_size):"
+      echo -n "bpred,$bpredictor;ruu_size,$ruu_size;lsq_size,$lsq_size:"
       export SSFLAGS="-bpred $bpredictor -ruu:size $ruu_size -lsq:size $lsq_size"
       ./run-wattch 2>&1 | ./scripts/tabulate
     done
