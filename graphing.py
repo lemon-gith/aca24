@@ -76,6 +76,21 @@ def process_data(x_stuffs, y_stuffs):
         raise ValueError("x_stuffs is too large :/")
     return (d1, d2, list(y_stuffs.values())[0])
 
+def process_data(stuffs):
+    """
+    just makes 3 nice little dictionaries, raising errors when there are errors to raise :)))
+    """
+    if len(stuffs) != 3:
+        raise ValueError("x_stuffs is too large :/")
+    
+    d1 = list(stuffs.values())[0]
+    d2 = list(stuffs.values())[1]
+    d3 = list(stuffs.values())[2]
+    n1 = list(stuffs.keys())[0]
+    n2 = list(stuffs.keys())[1]
+    n3 = list(stuffs.keys())[2]
+
+    return ((n1, d1),(n2, d2),(n3, d3))
 
 def plot_3d(plot_name, x_stuff, y_stuff, save=False):
     from matplotlib import cm
@@ -86,26 +101,26 @@ def plot_3d(plot_name, x_stuff, y_stuff, save=False):
         script_dir = os.path.dirname(__file__)
         save_file_path = os.path.join(script_dir, f"images/{plot_name}.png")
 
-    data = process_data(x_stuff, y_stuff)
+    data = process_data(y_stuff)
     
     from mpl_toolkits import mplot3d
     import numpy as np
     import matplotlib.pyplot as plt
     
     # defining all 3 axis
-    x = np.array(data[0])
-    y = np.array(data[1])
-    z = np.array(data[2])
+    x = np.array(data[2][1])
+    y = np.array(data[1][1])
+    z = np.array(data[0][1])
 
-    fig = plt.figure()
+    fig = plt.figure(2)
     ax = plt.axes(projection ='3d')
     c = x + y
     #ax.scatter(x, y, z, c=c)
-    ax.plot3D(x, y, z, c='purple')
+    ax.plot3D(x, y, z, c='magenta')
     ax.set_title('line');
-    ax.set_xlabel('ruu_size', fontsize=12)
-    ax.set_ylabel('lsq_size', fontsize=12)
-    ax.set_zlabel('total_energy', fontsize=12)
+    ax.set_xlabel(data[2][0], fontsize=12)
+    ax.set_ylabel(data[1][0], fontsize=12)
+    ax.set_zlabel(data[0][0], fontsize=12)
 
     plt.savefig(save_file_path) if save else plt.show()
 
@@ -166,7 +181,7 @@ def main():
     script_dir = os.path.dirname(__file__)
     abs_file_path = os.path.join(script_dir, f"results/{filename}.txt")
 
-    keep = ({},{'total_power_cycle_cc1'})
+    keep = ({'lol'},{'ruu_full', 'lsq_full', 'sim_exec_BW'})
 
     with open(abs_file_path, 'r') as file:
         x_vals, y_vals = decode(file, keep)

@@ -1,0 +1,1 @@
+inorder,1:sim_IPC,0.6610;sim_exec_BW,0.6803;ruu_full,0.0000;lsq_full,0.0000;avg_sim_slip,7.2203;dl1.miss_rate,0.0001;ul2.miss_rate,0.1886;total_power_cycle_cc1,682089820.1857
