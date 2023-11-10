@@ -4,7 +4,7 @@ for bpredictor in bimod comb 2lev comb perfect
 do 
   for ruu_size in 16 32
   do
-    for lsq_size in 8  16 32
+    for lsq_size in 8 16 32
     do
       echo -n "bpred,$bpredictor;ruu_size,$ruu_size;lsq_size,$lsq_size:"
       export SSFLAGS="-bpred $bpredictor -ruu:size $ruu_size -lsq:size $lsq_size"
