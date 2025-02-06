@@ -1,0 +1,21 @@
+#!/bin/bash
+
+path=$DIR_PATH
+
+cd $path
+
+echo -n "inorder,0:">"$path/remote_testing/outorder_data.txt"
+export SSFLAGS="-res:fpalu 1 -res:ialu 2 -res:imult 2 -issue:width 4 -decode:width 4 -fetch:ifqsize 4"
+./run-wattch 2>&1 | tee>"$path/remote_testing/outorder.log"
+echo "okee, now we're trying to tabulate"
+cat "$path/remote_testing/outorder.log" | ./scripts/tabulate>>"$path/remote_testing/outorder_data.txt"
+
+echo "now onto inorder issuing"
+
+echo -n "inorder,1:">"$path/remote_testing/inorder_data.txt"
+export SSFLAGS="-issue:inorder true -lsq:size 2 -res:fpalu 1 -res:ialu 1 -res:imult 1 -issue:width 1 -decode:width 1 -fetch:ifqsize 1"
+./run-wattch 2>&1 | tee>"$path/remote_testing/inorder.log" 
+echo "okee, now we're trying to tabulate"
+cat "$path/remote_testing/inorder.log" | ./scripts/tabulate>>"$path/remote_testing/inorder_data.txt"
+
+echo "Done :)"
