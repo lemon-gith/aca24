@@ -4,9 +4,11 @@ This repo contains both the coursework reports that I wrote for my 3rd year ACA 
 
 ## CW1 - Energy-Saving Parameter Optimisation
 
-An example [splaytrees test program](have_yet_to_upload_that_file) is run on the architecture configured by us. The performance and power consumption of our solution is simulated using [`SimpleScalar`](https://doi.org/10.1145/268806.268810). We can configure the architecture as we like, e.g. `ruu_size`, `ras_size`, branch predictor types, number of FP ALUs, etc.
+An example [splaytrees test program](./splaytrees/) is run on the architecture configured by us. The performance and power consumption of our solution is simulated using [`SimpleScalar`](https://doi.org/10.1145/268806.268810). We can configure the architecture as we like, e.g. `ruu_size`, `ras_size`, branch predictor types, number of FP ALUs, etc.
 
-The goal was to tune the architecture configurations, to optimise for power savings when running the [`splaytest.c`](same_link_as_above) program, from start to finish.
+The goal was to tune the architecture configurations, to optimise for power savings when running the program defined by [`splaytest.c`](splaytrees/splaytest.c), from start to finish.
+
+> All code in [`splaytrees/`](./splaytrees/) was provided to us by Professor [Paul Kelly](https://profiles.imperial.ac.uk/p.kelly), at ICL
 
 ### Report
 
