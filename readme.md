@@ -12,7 +12,9 @@ The goal was to tune the architecture configurations, to optimise for power savi
 
 This is the primary piece of work produced for this task. My approach was to take an in-depth look at the program and analyse it in relation to its hardware-usage as much as possible, to predict which components, tuned which way, would yield the greatest benefits.
 
-The majority of the [`scripts`](./scripts/) were provided to us, and were altered/modified for use in tuning other parameters. However, as a result of my analysis taking up the majority of my project time, I was rushed for time to carry out the actual simulations, so I had to write a bash script to outsource and parallelise the number-crunching:
+The majority of the [`scripts`](./scripts/) were provided to us, and were altered/modified for use in tuning other parameters. However, as a result of my analysis taking up the majority of my project time, I was rushed for time to carry out the actual simulations, so I had to write a [bash script](#testbashsh) to outsource and parallelise the number-crunching.
+
+In hindsight, an evaluation point for the report is that due to my lack of time to properly review the graphs produced, the 3D graphs that looked great in the interactive plot produced by [`graphing.py`](src/graphing.py), really weren't very legible in 2D format...
 
 ### [`testbash.sh`](src/testbash.sh)
 
