@@ -1,0 +1,1 @@
+-lsq:size 16 -bpred bimod -ruu:size 32 -res:fpalu 1 -res:ialu 2 -res:imult 2sim_IPC,1.2356;sim_exec_BW,1.4218;ruu_full,0.4183;lsq_full,0.2123;avg_sim_slip,13.7655;dl1.miss_rate,0.0001;ul2.miss_rate,0.1886;total_power_cycle_cc1,582929538.4842
