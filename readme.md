@@ -1,6 +1,6 @@
 # Advanced Computer Architecture 2024
 
-This repo contains both the coursework reports that I wrote for my 3rd year ACA module, as well as the scripts written to test various parameter configurations.
+This repo contains both the coursework reports that I wrote for my 3rd year [ACA module](https://www.imperial.ac.uk/computing/current-students/courses/60001/), as well as the scripts written to test various parameter configurations.
 
 ## CW1 - Energy-Saving Parameter Optimisation
 
